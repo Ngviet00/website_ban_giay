@@ -15,13 +15,32 @@
                         </form>
                     </div>
                     <div>
-                        <a href="">
+                        @if(auth()->check())
+                            <div>
+                                {{ auth()->user()->name }}
+                                <a class="text-primary" style="text-decoration: underline" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('(Logout)') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        @else
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            Account
-                        </a>
+                            <a href="{{ route('login') }}">
+                                Login
+                            </a>
+                            |
+                            <a href="{{ route('register') }}">
+                                Register
+                            </a>
+                        @endif
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="{{ route('cart') }}">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                             Bag
                         </a>
@@ -38,10 +57,6 @@
 
                 <li>
                     <a href="{{ route('product') }}">product</a>
-                </li>
-
-                <li>
-                    <a href="{{ route('cart') }}">cart</a>
                 </li>
 
                 <li>
