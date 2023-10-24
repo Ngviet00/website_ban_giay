@@ -25,9 +25,17 @@
                             <div class="desc">
                                 <h2><a href="javascript:void(0)">{{ $product->name }}</a></h2>
                                 <span class="price">{{ number_format($product->price) }} vnd</span>
-                                <a href="" class="btn btn-danger">
-                                    Add To Cart
-                                </a>
+                                <form action="{{ route('add-cart') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $product->id }}">
+                                    <input type="hidden" name="name" value="{{ $product->name }}">
+                                    <input type="hidden" name="price" value="{{ $product->price }}">
+                                    <input type="hidden" name="image" value="{{ $product->image }}">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button type="submit" class="btn btn-danger">
+                                        Add To Cart
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
