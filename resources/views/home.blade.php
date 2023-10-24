@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    @include('frontend.components.best-seller')
+    @include('frontend.components.best-seller', ['products' => $products])
     @include('frontend.components.product-by-category')
     @include('frontend.components.trending')
     @include('frontend.components.trending-collection')

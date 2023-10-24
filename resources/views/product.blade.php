@@ -68,34 +68,22 @@
                 </div>
             </div>
             <div class="row row-pb-md">
-                @for($i = 1; $i <= 16; $i++)
-                    <div class="col-md-3 col-lg-3 mb-4 text-center">
+                @foreach($products as $product)
+                    <div class="col-lg-3 mb-4 text-center">
                         <div class="product-entry border">
-                            <a href="#" class="prod-img">
-                                <img src="images/item-{{ $i }}.jpg" class="img-fluid" alt="Free html5 bootstrap 4 template">
+                            <a href="javascript:void(0)" class="prod-img">
+                                <img src="{{ asset($product->image) }}" class="img-fluid" alt="Free html5 bootstrap 4 template">
                             </a>
                             <div class="desc">
-                                <h2><a href="#">Women's Boots Shoes Maca</a></h2>
-                                <span class="price">$139.00</span>
+                                <h2><a href="javascript:void(0)">{{ $product->name }}</a></h2>
+                                <span class="price">{{ number_format($product->price) }} vnd</span>
+                                <a href="" class="btn btn-danger">
+                                    Add To Cart
+                                </a>
                             </div>
                         </div>
                     </div>
-                @endfor
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="block-27">
-                        <ul>
-                            <li><a href="#"><i class="ion-ios-arrow-back"></i></a></li>
-                            <li class="active"><span>1</span></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

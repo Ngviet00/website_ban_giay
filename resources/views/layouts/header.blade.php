@@ -1,3 +1,7 @@
+@php
+    use Gloudemans\Shoppingcart\Facades\Cart;
+@endphp
+
 <nav class="nav-header" role="navigation">
     <div class="top-menu">
         <div class="container">
@@ -9,9 +13,9 @@
                 </div>
                 <div class="d-flex align-items-center border-dark form-search">
                     <div>
-                        <form action="" class="border-none position-relative">
+                        <form action="{{ route('search') }}" method="get" class="border-none position-relative">
                             <i class="fa fa-search position-absolute" aria-hidden="true" style="top: 10px;left: 8px"></i>
-                            <input type="text" style="padding-left: 30px" placeholder="Search">
+                            <input type="text" style="padding-left: 30px" name="keyword" value="{{ request()->get('keyword') ? request()->get('keyword')  : '' }}" placeholder="Search">
                         </form>
                     </div>
                     <div>
@@ -43,6 +47,9 @@
                         <a href="{{ route('cart') }}">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                             Bag
+                            @if(Cart::count() > 0)
+                                <span class="text-primary">({{ Cart::count() }})</span>
+                            @endif
                         </a>
                     </div>
                 </div>

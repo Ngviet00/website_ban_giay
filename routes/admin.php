@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\Auth\LoginController;
 use \App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\CategoryController;
+use \App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,5 +24,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::group(['middleware' => 'auth.admin'], function () {
         Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+        Route::resource('category', CategoryController::class);
+        Route::resource('product', ProductController::class);
     });
 });
