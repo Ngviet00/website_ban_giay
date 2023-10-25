@@ -46,7 +46,8 @@
                     </ul>
                 </div>
                 <div class="col-md-8 order-md-1">
-                    <form class="needs-validation" novalidate="">
+                    <form class="needs-validation" method="post" action="{{ route('submit-order') }}">
+                        @csrf
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 <label for="name">Name</label>
@@ -78,7 +79,7 @@
                         <h4 class="mb-3">Payment</h4>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                                <input id="credit" name="payment_method" type="radio" value="1" class="custom-control-input" checked="checked" required="">
                                 <label class="custom-control-label" for="credit">Payment on delivery</label>
                             </div>
                         </div>

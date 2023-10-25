@@ -32,3 +32,4 @@ Route::post('update-cart', [HomeController::class, 'updateCart'])->name('update-
 Route::get('check-out', [HomeController::class, 'checkOut'])->name('check-out');
 Route::get('ordered', [HomeController::class, 'ordered'])->name('ordered');
 Route::get('search', [HomeController::class, 'search'])->name('search');
+Route::post('submit-order', [HomeController::class, 'submitOrdered'])->name('submit-order');

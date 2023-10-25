@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',  __('Checkout'))
+@section('title',  __('Ordered'))
 
 @section('content')
     @php
@@ -21,7 +21,7 @@
     <div id="">
         <div class="container">
             <div class="row">
-                <h1>Ban da dat hang thanh cong</h1>
+                <h1 class="text-center">You have placed your order successfully</h1>
             </div>
         </div>
     </div>

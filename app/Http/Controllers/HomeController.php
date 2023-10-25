@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\PurchaseHistory;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -172,5 +173,31 @@ class HomeController extends Controller
             })
             ->get();
         return view('search', compact('products'));
+    }
+
+    public function submitOrdered(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:255',
+            'phone' => 'required|numeric',
+            'address' => 'required|max:255',
+        ]);
+
+        foreach (Cart::content() as $key => $cart) {
+            PurchaseHistory::query()->create([
+                'member_id' => auth()->user()->id,
+                'product_id' => $cart->id,
+                'price' => $cart->price,
+                'quantity' => $cart->qty,
+                'total_money' => $cart->options->total_money,
+                'status' => 1,
+                'name' => $cart->name,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'payment_method' => $request->payment_method
+            ]);
+        }
+
+        return redirect()->route('ordered');
     }
 }
