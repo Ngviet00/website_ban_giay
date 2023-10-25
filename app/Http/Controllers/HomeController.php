@@ -187,6 +187,7 @@ class HomeController extends Controller
             PurchaseHistory::query()->create([
                 'member_id' => auth()->user()->id,
                 'product_id' => $cart->id,
+                'image' => $cart->options->image,
                 'price' => $cart->price,
                 'quantity' => $cart->qty,
                 'total_money' => $cart->options->total_money,
@@ -197,6 +198,8 @@ class HomeController extends Controller
                 'payment_method' => $request->payment_method
             ]);
         }
+
+        Cart::destroy();
 
         return redirect()->route('ordered');
     }

@@ -17,6 +17,7 @@ class CreatePurchaseHistoriesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('member_id');
             $table->bigInteger('product_id');
+            $table->string('image');
             $table->double('price');
             $table->integer('quantity');
             $table->double('total_money');

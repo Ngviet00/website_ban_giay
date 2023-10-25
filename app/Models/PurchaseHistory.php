@@ -15,6 +15,7 @@ class PurchaseHistory extends Model
     protected $fillable = [
         'member_id',
         'product_id',
+        'image',
         'price',
         'quantity',
         'total_money',
