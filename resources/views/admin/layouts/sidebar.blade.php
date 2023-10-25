@@ -28,8 +28,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="" aria-expanded="false">
+                <li class="sidebar-item {{ Route::is('admin.purchase-history.*') ? 'selected' : '' }}">
+                    <a class="sidebar-link" href="{{ route('admin.purchase-history.index') }}" aria-expanded="false">
                         <span>
                           <i class="ti ti-layout-dashboard"></i>
                         </span>

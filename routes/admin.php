@@ -5,6 +5,7 @@ use \App\Http\Controllers\Admin\Auth\LoginController;
 use \App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\CategoryController;
 use \App\Http\Controllers\ProductController;
+use \App\Http\Controllers\PurchaseHistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::resource('category', CategoryController::class);
         Route::resource('product', ProductController::class);
+        Route::group(['name' => 'purchase-history', 'as' => 'purchase-history.'], function () {
+            Route::get('purchase-history', [PurchaseHistoryController::class, 'index'])->name('index');
+            Route::get('purchase-history/{id}', [PurchaseHistoryController::class, 'destroy'])->name('destroy');
+            Route::get('confirm/{id}', [PurchaseHistoryController::class, 'confirm'])->name('confirm');
+        });
     });
 });

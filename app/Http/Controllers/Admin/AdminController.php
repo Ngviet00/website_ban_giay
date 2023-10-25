@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\PurchaseHistory;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,8 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $purchaseHistory = PurchaseHistory::all();
+
+        return view('admin.dashboard', compact('purchaseHistory'));
     }
 }
