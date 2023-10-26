@@ -11,7 +11,7 @@ class Product extends Model
 {
     use HasFactory, softDeletes;
 
-    protected $table = 'products';
+    protected $table = 'san_pham';
 
     protected $fillable = [
         'name',

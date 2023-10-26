@@ -42,7 +42,7 @@
                             <a class="btn btn-outline-primary mx-3 mt-2 d-block" href="{{ route('admin.logout') }}"
                                onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Đăng xuất') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">

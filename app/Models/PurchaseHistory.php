@@ -10,7 +10,7 @@ class PurchaseHistory extends Model
 {
     use HasFactory, softDeletes;
 
-    protected $table = 'purchase_histories';
+    protected $table = 'don_hang';
 
     protected $fillable = [
         'member_id',

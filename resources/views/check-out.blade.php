@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-md-4 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Your cart</span>
+                        <span class="text-muted">Giỏ hàng của bạn</span>
                         <span class="badge badge-secondary badge-pill">{{ Cart::count() }}</span>
                     </h4>
                     <ul class="list-group mb-3 sticky-top">
@@ -40,7 +40,7 @@
                             </li>
                         @endforeach
                         <li class="list-group-item d-flex justify-content-between">
-                            <span>Total (vnd)</span>
+                            <span>Tổng tiền (vnd)</span>
                             <strong>{{ number_format($totalMoney) }} vnd</strong>
                         </li>
                     </ul>
@@ -50,20 +50,20 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-12 mb-3">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="">
+                                <label for="name">Tên</label>
+                                <input type="text" class="form-control" id="name" placeholder="Tên" name="name" value="">
                             </div>
 
                             <div class="col-md-12 mb-3">
-                                <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone" value="">
+                                <label for="phone">Số điện thoại</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Số điện thoại" name="phone" value="">
                             </div>
 
                         </div>
                         <div class="mb-3">
-                            <label for="username">Username</label>
+                            <label for="username">Tên đăng nhập</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="username" value="{{ auth()->user()->name }}" placeholder="Username" required="">
+                                <input type="text" class="form-control" id="username" value="{{ auth()->user()->name }}" placeholder="Tên đăng nhập" required="">
                                 <div class="invalid-feedback" style="width: 100%;"> Your username is required. </div>
                             </div>
                         </div>
@@ -73,17 +73,17 @@
                             <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                         </div>
                         <div class="mb-3">
-                            <label for="address">Address</label> <br>
+                            <label for="address">Địa chỉ</label> <br>
                             <textarea name="address" id="address" cols="90" rows="3" class="p-1"></textarea>
                         </div>
-                        <h4 class="mb-3">Payment</h4>
+                        <h4 class="mb-3">Phương thức thanh toán</h4>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
                                 <input id="credit" name="payment_method" type="radio" value="1" class="custom-control-input" checked="checked" required="">
                                 <label class="custom-control-label" for="credit">Payment on delivery</label>
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Order</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Đặt hàng</button>
                     </form>
                 </div>
             </div>

@@ -34,19 +34,19 @@
                     <div class="col-md-12">
                         <div class="product-name d-flex">
                             <div class="one-forth text-left px-4">
-                                <span>Product Details</span>
+                                <span>Chi tiết sản phẩm</span>
                             </div>
                             <div class="one-eight text-center">
-                                <span>Price</span>
+                                <span>Giá</span>
                             </div>
                             <div class="one-eight text-center">
-                                <span>Quantity</span>
+                                <span>Số lượng</span>
                             </div>
                             <div class="one-eight text-center">
-                                <span>Total</span>
+                                <span>Tổng tiền</span>
                             </div>
                             <div class="one-eight text-center px-4">
-                                <span>Remove</span>
+                                <span>Hành động</span>
                             </div>
                         </div>
                         @forelse($carts as $cart)
@@ -105,19 +105,19 @@
                                     <div class="col-sm-8 text-center">
                                         <div class="total">
                                             <div class="sub">
-                                                <p><span>Quantity:</span> <span>{{ Cart::count() }}</span></p>
-                                                <p><span>Total:</span> <span>{{ number_format($totalMoney) }} vnd</span>
+                                                <p><span>Số lượng:</span> <span>{{ Cart::count() }}</span></p>
+                                                <p><span>Thành tiền:</span> <span>{{ number_format($totalMoney) }} vnd</span>
                                                 </p>
                                             </div>
                                             <div class="d-flex justify-content-evenly">
                                                 <a href="{{ route('clear-cart') }}" class="btn btn-secondary">
-                                                    Clear Cart
+                                                    Xoá giỏ hàng
                                                 </a>
                                                 <button type="submit" class="btn btn-primary">
-                                                    Update Cart
+                                                    Cập nhật giỏ hàng
                                                 </button>
                                                 <a href="{{ route('check-out') }}" class="btn btn-danger">
-                                                    Checkout
+                                                    Thanh toán
                                                 </a>
                                             </div>
                                         </div>

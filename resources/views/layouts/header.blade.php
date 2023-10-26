@@ -25,7 +25,7 @@
                                 <a class="text-primary" style="text-decoration: underline" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('(Logout)') }}
+                                    {{ __('(Đăng xuất)') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -35,18 +35,18 @@
                         @else
                             <i class="fa fa-user" aria-hidden="true"></i>
                             <a href="{{ route('login') }}">
-                                Login
+                                Đăng nhập
                             </a>
                             |
                             <a href="{{ route('register') }}">
-                                Register
+                                Đăng ký
                             </a>
                         @endif
                     </div>
                     <div>
                         <a href="{{ route('cart') }}">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                            Bag
+                            Giỏ hàng
                             @if(Cart::count() > 0)
                                 <span class="text-primary">({{ Cart::count() }})</span>
                             @endif
@@ -59,19 +59,19 @@
         <div class="sub-menu mt-2">
             <ul class="d-flex justify-content-center">
                 <li>
-                    <a href="{{ route('home') }}">home</a>
+                    <a href="{{ route('home') }}">Trang Chủ</a>
                 </li>
 
                 <li>
-                    <a href="{{ route('product') }}">product</a>
+                    <a href="{{ route('product') }}">Sản Phẩm</a>
                 </li>
 
                 <li>
-                    <a href="{{ route('about') }}">about</a>
+                    <a href="{{ route('about') }}">Về Chúng Tôi</a>
                 </li>
 
                 <li>
-                    <a href="{{ route('contact') }}">contact</a>
+                    <a href="{{ route('contact') }}">Liên Hệ</a>
                 </li>
             </ul>
         </div>

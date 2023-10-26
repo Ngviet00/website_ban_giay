@@ -27,7 +27,7 @@
                             <form method="POST" action="{{ route('admin.login') }}">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                                    <label for="exampleInputEmail1" class="form-label">Tên đăng nhập</label>
                                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 @error('email')
@@ -37,7 +37,7 @@
                                 @enderror
 
                                 <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
                                     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                                 </div>
                                 @error('password')
@@ -54,7 +54,7 @@
                                     </div>
                                     <a class="text-primary fw-bold" href="./index.html">Forgot Password ?</a>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
+                                <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Đăng nhập</button>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <p class="fs-4 mb-0 fw-bold">New to Modernize?</p>
                                     <a class="text-primary fw-bold ms-2" href="./authentication-register.html">Create an account</a>

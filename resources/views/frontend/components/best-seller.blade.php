@@ -23,7 +23,7 @@
                                 <input type="hidden" name="image" value="{{ $product->image }}">
                                 <input type="hidden" name="quantity" value="1">
                                 <button type="submit" class="btn btn-danger">
-                                    Add To Cart
+                                    Thêm giỏ hàng
                                 </button>
                             </form>
                         </div>
